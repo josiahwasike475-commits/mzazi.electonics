@@ -1,0 +1,1 @@
+﻿web: gunicorn mzazi_config.wsgi:application
