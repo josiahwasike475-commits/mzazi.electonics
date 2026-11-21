@@ -61,15 +61,14 @@ TEMPLATES = [
 WSGI_APPLICATION = "mzazi_config.wsgi.application"
 ASGI_APPLICATION = "mzazi_config.asgi.application"
 
-# ← Marekebisho: tumia DATABASE_URL kama ipo, la sivyo SQLite
+
 DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        ssl_require=True,
+        ssl_require=False,  # ← Badilisha hii kuwa False
     )
 }
-
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
