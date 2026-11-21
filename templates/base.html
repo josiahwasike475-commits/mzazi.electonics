@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mzazi Electronics — quality electronics and accessories in Kenya.">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>{% if page_title %}{{ page_title }} · {% endif %}Mzazi Electronics</title>
+    <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+    <link rel="alternate icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="icon" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="icon" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fresh-redesign.css' %}">
+</head>
+<body class="page-{{ active_nav|default:'home' }}{% if category_slug %} category-{{ category_slug }}{% endif %}">
+    <div class="announcement"><span class="announcement__dot"></span> Smart Electronics. Better Life. <span class="announcement__divider"></span> WhatsApp Josiah on <a href="{{ whatsapp_url }}">0786 163 265</a></div>
+    <header class="site-header" data-header>
+        <a class="brand" href="{% url 'core:home' %}" aria-label="Mzazi Electronics home"><img class="brand__image" src="{% static 'images/logo.svg' %}" alt="mzaElectronics — Smart Electronics. Better Life."></a>
+        <button class="mobile-menu-button" type="button" aria-label="Toggle menu" data-menu-button><span></span><span></span><span></span></button>
+        <nav class="main-nav" data-nav>
+            <a class="{% if active_nav == 'home' %}is-active{% endif %}" href="{% url 'core:home' %}">Home</a>
+            <a class="{% if active_nav == 'shop' %}is-active{% endif %}" href="{% url 'catalog:shop' %}">Shop</a>
+            <a class="{% if active_nav == 'categories' %}is-active{% endif %}" href="{% url 'catalog:category' 'phones-accessories' %}">Categories</a>
+            <a class="{% if active_nav == 'oraimo' %}is-active{% endif %}" href="{% url 'catalog:category' 'oraimo' %}">Oraimo</a>
+            <a class="{% if active_nav == 'amaya' %}is-active{% endif %}" href="{% url 'catalog:category' 'amaya' %}">Amaya</a>
+            <a class="{% if active_nav == 'lights' %}is-active{% endif %}" href="{% url 'catalog:category' 'lights' %}">Lights</a>
+            <a class="{% if active_nav == 'about' %}is-active{% endif %}" href="{% url 'core:about' %}">About</a>
+            <a class="{% if active_nav == 'contact' %}is-active{% endif %}" href="{% url 'core:contact' %}">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <label class="header-search" aria-label="Search products"><span>⌕</span><input type="search" placeholder="Search products" data-global-search></label>
+            <a class="cart-button" href="{% url 'orders:cart' %}" aria-label="Shopping cart"><span>▢</span><b data-cart-count>0</b></a>
+        </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <button class="assistant-launch" type="button" data-assistant-toggle aria-expanded="false"><span class="assistant-launch__spark">✦</span><span><strong>Mza AI</strong><small>Ask about electronics</small></span></button>
+    <aside class="assistant-panel" data-assistant-panel hidden aria-label="Mza AI shopping assistant"><div class="assistant-panel__head"><div><span class="assistant-panel__spark">✦</span><span><strong>Mza AI</strong><small>Mzazi shopping assistant</small></span></div><button type="button" data-assistant-close aria-label="Close assistant">×</button></div><div class="assistant-panel__intro"><strong>What are you looking for?</strong><span>I can help you browse the catalogue, compare categories and prepare a WhatsApp enquiry.</span></div><div class="assistant-messages" data-assistant-messages><div class="assistant-message assistant-message--bot">Hi, I’m Mza AI. Ask me about phones, Oraimo, Amaya, computers, home electronics or networking.</div></div><div class="assistant-suggestions" data-assistant-suggestions><button type="button">Show me Oraimo options</button><button type="button">I need a phone accessory</button><button type="button">How do I order?</button></div><form class="assistant-form" data-assistant-form><input name="message" autocomplete="off" placeholder="Ask Mza AI…" maxlength="800" required><button type="submit" aria-label="Send message">↑</button></form><div class="assistant-panel__foot">AI suggestions use the current catalogue. <a href="{{ whatsapp_url }}" target="_blank" rel="noreferrer">Talk to Josiah ↗</a></div></aside>
+    <a class="whatsapp-dock" href="{{ whatsapp_url }}" target="_blank" rel="noreferrer"><span class="whatsapp-dock__icon">◔</span><span><strong>Chat with Josiah</strong><small>Fast answers on WhatsApp</small></span></a>
+
+    <footer class="site-footer">
+        <div class="footer-grid wrap">
+            <div class="footer-brand"><a class="brand brand--footer" href="{% url 'core:home' %}"><img class="brand__image" src="{% static 'images/logo.svg' %}" alt="mzaElectronics — Smart Electronics. Better Life."></a><p>Quality electronics, genuine accessories and straightforward support for everyday life in Kenya.</p><a class="footer-contact" href="tel:0786163265">0786 163 265 <span>↗</span></a></div>
+            <div><h4>Explore</h4><a href="{% url 'catalog:shop' %}">Shop all</a><a href="{% url 'catalog:category' 'phones-accessories' %}">Phones & accessories</a><a href="{% url 'catalog:category' 'oraimo' %}">Oraimo</a><a href="{% url 'catalog:category' 'amaya' %}">Amaya</a></div>
+            <div><h4>Help</h4><a href="{% url 'core:about' %}">About Mzazi</a><a href="{% url 'core:contact' %}">Contact us</a><a href="{% url 'accounts:account' %}">My account</a><a href="{% url 'orders:cart' %}">Cart & checkout</a></div>
+            <div class="footer-newsletter"><h4>Stay in the loop</h4><p>Get useful deals and new arrivals — no noise.</p><form data-newsletter-form><label class="sr-only" for="newsletter-email">Email address</label><div class="newsletter-input"><input id="newsletter-email" name="email" type="email" placeholder="Your email address" required><button type="submit">→</button></div><small data-newsletter-message></small></form></div>
+        </div>
+        <div class="footer-bottom wrap"><span>© 2026 Mzazi Electronics. All Rights Reserved.</span><span>Mukuru kwa Ruben, Embakasi South, Nairobi · Pay securely with M-Pesa</span></div>
+    </footer>
+    {% if products %}{{ products|json_script:"catalog-data" }}{% endif %}
+    <script>window.MZAZI_WHATSAPP = "{{ whatsapp_number }}";</script>
+    <script src="{% static 'js/site.js' %}"></script>
+</body>
+</html>

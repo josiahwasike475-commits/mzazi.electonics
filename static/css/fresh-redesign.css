@@ -1,0 +1,276 @@
+/* Mzazi Electronics — Fresh marketplace redesign */
+:root{--fresh-ink:#102a43;--fresh-blue:#1769aa;--fresh-orange:#f97316;--fresh-green:#159447;--fresh-bg:#f6f9fc;--fresh-line:#dbe7ef;--fresh-card:#fff;--fresh-shadow:0 20px 55px rgba(16,42,67,.10)}
+body{background:var(--fresh-bg)!important;color:var(--fresh-ink)!important}
+.announcement{background:var(--fresh-ink)!important;min-height:36px}
+.site-header{height:76px;background:#fff!important;border-bottom:1px solid var(--fresh-line);position:sticky;top:0;z-index:50;padding:0 18px}
+.brand__image{width:174px!important}.main-nav{gap:19px}.main-nav a{padding:27px 0!important;color:#60788b!important}.main-nav a:hover,.main-nav a.is-active{color:var(--fresh-blue)!important}.main-nav a.is-active:after{bottom:16px!important;background:var(--fresh-orange)!important}
+.header-search{background:#f1f6fa!important;border-color:transparent!important}.header-search:focus-within{background:#fff!important;border-color:var(--fresh-blue)!important}.icon-button,.cart-button{border-color:var(--fresh-line)!important;background:#fff}.icon-button:hover,.cart-button:hover{background:#eef7fd!important;border-color:var(--fresh-blue)!important}
+main{background:var(--fresh-bg)!important;color:var(--fresh-ink)!important}.hero{max-width:1240px;width:calc(100% - 32px);min-height:545px;padding:58px 52px;background:linear-gradient(120deg,#fff 0%,#fff 55%,#eaf5fc 100%);border-radius:0 0 30px 30px;box-shadow:0 18px 45px rgba(16,42,67,.06)}.hero__copy{padding-left:0}.hero__copy h1{font-size:clamp(45px,6vw,74px);color:var(--fresh-ink)}.hero__lead{color:#5f7483!important}.hero__visual{height:430px;border-radius:28px;background:linear-gradient(145deg,#1769aa,#0e426e)!important;border:0;box-shadow:var(--fresh-shadow)}.hero-headphones{width:250px!important;height:250px!important}.hero-sticker--green{background:var(--fresh-green)!important}.ticker{background:var(--fresh-orange)!important;color:#fff!important}.section{padding-top:82px;padding-bottom:28px}.section-heading h2{color:var(--fresh-ink)}.category-grid{grid-template-columns:repeat(3,1fr);gap:15px}.category-tile{min-height:175px;background:#fff!important;border:1px solid var(--fresh-line);color:var(--fresh-ink)!important;box-shadow:0 7px 25px rgba(16,42,67,.05)}.category-tile:nth-child(3n+2){background:#eef7fd!important}.category-tile:nth-child(3n+3){background:#fff7ef!important}.category-tile strong{color:var(--fresh-ink)}.product-grid{gap:18px}.product-card{border:1px solid var(--fresh-line)!important;border-radius:20px!important;background:#fff!important;box-shadow:0 8px 28px rgba(16,42,67,.05)}.product-card:hover{box-shadow:var(--fresh-shadow)!important;border-color:#a8c9dc!important}.product-card__visual{height:210px;background:#eef5f9!important}.product-card__body{padding:19px}.product-card h3{color:var(--fresh-ink)}.product-card__desc{color:#6b8190}.product-card__meta strong{color:var(--fresh-blue)}.button--orange{background:var(--fresh-orange)!important}.button--ghost{border-color:var(--fresh-line);background:#fff;color:var(--fresh-blue)}.feature-band{margin-top:80px;border-radius:26px;background:var(--fresh-ink)!important}.newsletter-band{background:var(--fresh-blue)!important}.site-footer{margin-top:75px;background:#fff!important;border-top:1px solid var(--fresh-line)}
+.page-intro{padding-top:58px;padding-bottom:38px}.page-intro h1,.story-hero h1,.product-detail__copy h1,.status-page h1{color:var(--fresh-ink)}.page-intro p,.story-hero__lede,.product-detail__lede{color:#6b8190!important}.shop-layout{padding-top:30px}.filter-panel,.filter-search,.summary-card,.dashboard-panel,.metric-card,.account-card,.auth-card{background:#fff!important}.filter-search{border-color:var(--fresh-line)}.product-detail__image,.product-detail__fallback-image{background:#fff!important;border:1px solid var(--fresh-line)}.cart-layout,.checkout-layout{padding-top:30px}.summary-card{border-color:var(--fresh-line);box-shadow:var(--fresh-shadow)}.form-section{border-color:var(--fresh-line)}.contact-card{background:#eef8f1!important}.account-aside{background:var(--fresh-blue)!important}.auth-card{box-shadow:var(--fresh-shadow)}
+.assistant-launch{border-color:#bcd5e5!important;box-shadow:0 10px 25px rgba(16,42,67,.12)}.whatsapp-dock{background:var(--fresh-green)!important}
+/* Fresh admin presentation */
+ .admin-shell{background:#eef4f8!important}.admin-sidebar{background:var(--fresh-ink)!important}.admin-main{background:#eef4f8!important}.admin-topbar{padding-top:38px}.admin-card,.admin-stat{border-color:var(--fresh-line)!important;box-shadow:0 8px 25px rgba(16,42,67,.05)}.admin-quick-actions{background:var(--fresh-blue)!important}.simple-admin{background:#eef4f8!important}.simple-head{box-shadow:0 1px 0 var(--fresh-line)}.simple-wrap,.simple-form-wrap{background:transparent!important}.simple-action--blue{background:var(--fresh-blue)!important}.simple-card,.simple-form-card{border-color:var(--fresh-line)!important;box-shadow:0 8px 25px rgba(16,42,67,.05)}
+ .admin-location{display:inline-flex;align-items:center;gap:9px;margin-top:16px;width:max-content;max-width:100%;padding:8px 11px;border:1px solid #cbd8e2;border-radius:12px;background:#fff;color:var(--fresh-ink);transition:.2s}.admin-location:hover{border-color:var(--fresh-orange);transform:translateY(-1px)}.admin-location__icon{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--fresh-orange);color:#fff;font-size:19px;line-height:1}.admin-location strong,.admin-location small{display:block}.admin-location strong{font-size:10px}.admin-location small{margin-top:2px;color:#60788b;font-size:9px}
+@media(max-width:780px){.site-header{height:68px;padding:0 12px}.hero{width:100%;border-radius:0;padding:35px 20px 28px}.hero__visual{height:355px}.section{padding-top:58px}.category-grid{grid-template-columns:repeat(2,1fr)}.product-card__visual{height:160px}.product-card__body{padding:13px}.page-intro{padding-top:40px}.admin-main{padding:0 15px}}
+/* Stronger brand visibility */
+.brand__image{width:220px!important;max-height:48px;object-fit:contain;object-position:left center}
+.brand{min-width:220px}
+.admin-brand{background:#FFFFFF;border-radius:12px;padding:8px 12px!important;border-bottom:0!important}
+.admin-brand img{width:190px!important;filter:none!important}
+.simple-head img{width:210px!important;max-height:48px;object-fit:contain}
+@media(max-width:780px){.brand__image{width:175px!important}.brand{min-width:0}.admin-brand img,.simple-head img{width:165px!important}}
+/* Headphones are the subtle background of the complete homepage */
+body.page-home{background-color:var(--fresh-bg)!important;background-image:none!important}
+body.page-home::before{content:"";position:fixed;inset:0;z-index:2;pointer-events:none;background-image:url('/static/images/homepage-headphones.webp');background-size:950px;background-position:center 210px;background-repeat:no-repeat;opacity:1}
+body.page-home main{background-color:transparent!important;background-image:none!important}
+.hero__visual{background:linear-gradient(145deg,#1769aa,#0e426e)!important}
+.hero-headphones{display:none!important}
+/* Brand category themes */
+body.category-oraimo main{background:#f5faf6!important;color:#111!important}
+body.category-oraimo .page-intro{background:linear-gradient(135deg,#111 0%,#111 62%,#167447 100%);color:#fff;border-radius:0 0 28px 28px;padding-left:36px;padding-right:36px}
+body.category-oraimo .page-intro h1,body.category-oraimo .page-intro p,body.category-oraimo .page-intro .eyebrow,body.category-oraimo .page-intro__meta strong,body.category-oraimo .page-intro__meta span{color:#fff!important}
+body.category-oraimo .filter-panel{border-color:#b8d8c2;background:#fff}
+body.category-oraimo .filter-panel__top .eyebrow,body.category-oraimo .shop-toolbar strong{color:#167447}
+body.category-oraimo .button--orange{background:#167447!important;color:#fff!important}
+body.category-oraimo .product-card{border-color:#b8d8c2!important}
+body.category-oraimo .product-card__meta strong{color:#167447}
+body.category-oraimo .shop-toolbar{border-color:#b8d8c2}
+body.category-amaya main{background:#fffaf6!important;color:#2b160d!important}
+body.category-amaya .page-intro{background:linear-gradient(135deg,#f97316 0%,#f97316 65%,#fff 150%);color:#fff;border-radius:0 0 28px 28px;padding-left:36px;padding-right:36px}
+body.category-amaya .page-intro h1,body.category-amaya .page-intro p,body.category-amaya .page-intro .eyebrow,body.category-amaya .page-intro__meta strong,body.category-amaya .page-intro__meta span{color:#fff!important}
+body.category-amaya .filter-panel{border-color:#ffd0b0;background:#fff}
+body.category-amaya .filter-panel__top .eyebrow,body.category-amaya .shop-toolbar strong{color:#f97316}
+body.category-amaya .button--orange{background:#f97316!important;color:#fff!important}
+body.category-amaya .product-card{border-color:#ffd0b0!important}
+body.category-amaya .product-card__meta strong{color:#f97316}
+body.category-amaya .shop-toolbar{border-color:#ffd0b0}
+/* Oraimo full-page green brand treatment */
+body.category-oraimo{background:#159447!important;color:#fff!important}
+body.category-oraimo main{background:#159447!important;color:#fff!important}
+body.category-oraimo .page-intro{background:#159447!important;color:#fff!important;border-bottom:2px solid #111}
+body.category-oraimo .page-intro h1,body.category-oraimo .page-intro p,body.category-oraimo .page-intro .eyebrow,body.category-oraimo .page-intro__meta strong,body.category-oraimo .page-intro__meta span{color:#fff!important}
+body.category-oraimo .shop-layout{background:#159447!important}
+body.category-oraimo .filter-panel{background:#fff;border-color:#111}
+body.category-oraimo .filter-panel__top .eyebrow,body.category-oraimo .filter-panel__top button,body.category-oraimo .shop-toolbar strong{color:#111!important}
+body.category-oraimo .button--orange,body.category-oraimo .empty-state .button{background:#111!important;color:#fff!important;border-color:#111!important}
+body.category-oraimo .shop-toolbar{color:#fff;border-color:rgba(255,255,255,.5)}
+body.category-oraimo .shop-toolbar select{border-color:#111;background:#fff;color:#111}
+body.category-oraimo .product-card{background:#fff!important;border-color:#111!important}
+body.category-oraimo .product-card__meta strong{color:#111!important}
+body.category-oraimo .product-card__visual{background:#e8f7ed!important}
+body.category-oraimo .filter-search{border-color:#111}
+body.category-oraimo .site-header{background:#159447!important;border-color:#111}
+body.category-oraimo .main-nav a{color:#fff!important}
+body.category-oraimo .main-nav a.is-active:after{background:#111!important}
+body.category-oraimo .header-search{background:#fff!important;color:#111}
+body.category-oraimo .icon-button,body.category-oraimo .cart-button{background:#fff;border-color:#111;color:#111}
+body.category-oraimo .site-footer{background:#159447!important;border-color:#111;color:#fff}
+body.category-oraimo .site-footer a,body.category-oraimo .site-footer p,body.category-oraimo .site-footer h4,body.category-oraimo .footer-bottom{color:#fff!important}
+/* Oraimo final palette: black and green, with light text only for readability */
+body.category-oraimo,body.category-oraimo main{background:#050505!important;color:#fff!important}
+body.category-oraimo .site-header,body.category-oraimo .site-footer{background:#050505!important;border-color:#159447!important}
+body.category-oraimo .main-nav a,body.category-oraimo .site-footer a,body.category-oraimo .site-footer p,body.category-oraimo .site-footer h4,body.category-oraimo .footer-bottom{color:#fff!important}
+body.category-oraimo .page-intro,body.category-oraimo .shop-layout{background:#050505!important}
+body.category-oraimo .page-intro{border-bottom:2px solid #159447}
+body.category-oraimo .filter-panel,body.category-oraimo .product-card{background:#111!important;border-color:#159447!important;color:#fff!important}
+body.category-oraimo .filter-search,body.category-oraimo .shop-toolbar select{background:#050505!important;border-color:#159447!important;color:#fff!important}
+body.category-oraimo .filter-panel__top .eyebrow,body.category-oraimo .filter-panel__top button,body.category-oraimo .shop-toolbar strong,body.category-oraimo .product-card__meta strong{color:#159447!important}
+body.category-oraimo .button--orange,body.category-oraimo .empty-state .button{background:#159447!important;border-color:#159447!important;color:#050505!important}
+body.category-oraimo .product-card__visual{background:#0b2818!important}
+body.category-oraimo .shop-toolbar{color:#fff;border-color:#159447}
+/* Oraimo typography: white copy with green highlighted phrase */
+body.category-oraimo .page-intro h1,body.category-oraimo .page-intro h1 em,body.category-oraimo .shop-layout,body.category-oraimo .filter-panel,body.category-oraimo .filter-panel label,body.category-oraimo .filter-group span,body.category-oraimo .shop-results,body.category-oraimo .product-card h3,body.category-oraimo .product-card p,body.category-oraimo .product-card small,body.category-oraimo .product-card__desc{color:#fff!important}
+body.category-oraimo .page-intro h1 em{color:#159447!important}
+body.category-oraimo .shop-toolbar,body.category-oraimo .shop-toolbar label,body.category-oraimo .shop-toolbar span{color:#fff!important}
+/* Oraimo background watermark */
+body.category-oraimo::after{content:"ORAIMO";position:fixed;inset:0;z-index:2;pointer-events:none;display:grid;place-items:center;color:#159447;font-family:Arial,sans-serif;font-size:clamp(90px,18vw,260px);font-weight:900;letter-spacing:.08em;opacity:.11;transform:rotate(-12deg)}
+/* Amaya final palette: full orange with white copy */
+body.category-amaya,body.category-amaya main{background:#f97316!important;color:#fff!important}
+body.category-amaya .site-header,body.category-amaya .site-footer{background:#f97316!important;border-color:#fff!important;color:#fff!important}
+body.category-amaya .main-nav a,body.category-amaya .site-footer a,body.category-amaya .site-footer p,body.category-amaya .site-footer h4,body.category-amaya .footer-bottom{color:#fff!important}
+body.category-amaya .main-nav a.is-active:after{background:#fff!important}
+body.category-amaya .page-intro,body.category-amaya .shop-layout{background:#f97316!important;color:#fff!important}
+body.category-amaya .page-intro{border-bottom:2px solid #fff}
+body.category-amaya .page-intro h1,body.category-amaya .page-intro p,body.category-amaya .page-intro .eyebrow,body.category-amaya .page-intro__meta strong,body.category-amaya .page-intro__meta span{color:#fff!important}
+body.category-amaya .filter-panel,body.category-amaya .product-card{background:#f97316!important;border-color:#fff!important;color:#fff!important}
+body.category-amaya .filter-search,body.category-amaya .shop-toolbar select{background:#d95d0b!important;border-color:#fff!important;color:#fff!important}
+body.category-amaya .filter-panel__top .eyebrow,body.category-amaya .filter-panel__top button,body.category-amaya .shop-toolbar strong,body.category-amaya .product-card h3,body.category-amaya .product-card p,body.category-amaya .product-card small,body.category-amaya .product-card__desc,body.category-amaya .product-card__meta strong{color:#fff!important}
+body.category-amaya .button--orange,body.category-amaya .empty-state .button{background:#c2410c!important;border-color:#fff!important;color:#fff!important}
+body.category-amaya .product-card__visual{background:#ff8a3d!important}
+body.category-amaya .shop-toolbar{color:#fff;border-color:#fff}
+/* Amaya background watermark */
+body.category-amaya::after{content:"AMAYA";position:fixed;inset:0;z-index:2;pointer-events:none;display:grid;place-items:center;color:#fff;font-family:Arial,sans-serif;font-size:clamp(100px,20vw,280px);font-weight:900;letter-spacing:.08em;opacity:.16;transform:rotate(-12deg)}
+/* About page palette: black, blue and orange */
+body.page-about{background:#050505!important;color:#fff!important}
+body.page-about main{background:#050505!important;color:#fff!important}
+body.page-about .site-header,body.page-about .site-footer{background:#050505!important;border-color:#1769aa!important;color:#fff!important}
+body.page-about .main-nav a,body.page-about .site-footer a,body.page-about .site-footer p,body.page-about .site-footer h4,body.page-about .footer-bottom{color:#fff!important}
+body.page-about .main-nav a.is-active:after{background:#f97316!important}
+body.page-about .story-hero{background:#1769aa;border-radius:0 0 30px 30px;padding:70px 52px;color:#fff}
+body.page-about .story-hero h1,body.page-about .story-hero p,body.page-about .story-hero .eyebrow{color:#fff!important}
+body.page-about .story-hero h1 em,body.page-about .story-grid h2 em{color:#f97316!important}
+body.page-about .story-hero__stamp{background:#f97316;color:#fff;box-shadow:18px 22px 0 #050505}
+body.page-about .story-grid{border-color:#1769aa;color:#fff}
+body.page-about .story-grid__main p,body.page-about .story-grid__aside span{color:#dbeafe!important}
+body.page-about .story-grid__aside{border-color:#1769aa}
+body.page-about .story-grid__aside strong{color:#f97316}
+/* Homepage palette: black, grey, orange and white */
+body.page-home{background:#050505!important;color:#fff!important}
+body.page-home main{background:#050505!important;color:#fff!important}
+body.page-home .site-header{background:#050505!important;border-color:#374151!important}
+body.page-home .main-nav a,body.page-home .site-footer a,body.page-home .site-footer p,body.page-home .site-footer h4,body.page-home .footer-bottom{color:#fff!important}
+body.page-home .main-nav a.is-active:after{background:#f97316!important}
+body.page-home .header-search{background:#374151!important;color:#fff;border-color:#6b7280!important}
+body.page-home .icon-button,body.page-home .cart-button{background:#111827!important;border-color:#6b7280!important;color:#fff}
+body.page-home .hero{background:linear-gradient(135deg,#050505 0%,#111827 60%,#374151 100%)!important;color:#fff}
+body.page-home .hero__copy h1,body.page-home .hero__lead,body.page-home .hero__proof,body.page-home .hero__proof small{color:#fff!important}
+body.page-home .hero__copy h1 em{color:#f97316!important}
+body.page-home .hero__visual{background:linear-gradient(145deg,#374151,#111827)!important;border:1px solid #6b7280}
+body.page-home .button--orange{background:#f97316!important;color:#fff!important;border-color:#f97316!important}
+body.page-home .button--ghost{background:transparent!important;border-color:#9ca3af!important;color:#fff!important}
+body.page-home .ticker{background:#f97316!important;color:#fff!important}
+body.page-home .section-heading h2,body.page-home .section-heading h2 em,body.page-home .eyebrow,body.page-home .text-link{color:#fff!important}
+body.page-home .category-tile{background:#374151!important;border-color:#6b7280!important;color:#fff!important;box-shadow:none}
+body.page-home .category-tile:nth-child(3n+2),body.page-home .category-tile:nth-child(3n+3){background:#1f2937!important}
+body.page-home .category-tile strong,body.page-home .category-tile small{color:#fff!important}
+body.page-home .product-card{background:#1f2937!important;border-color:#6b7280!important;color:#fff!important;box-shadow:none}
+body.page-home .product-card__visual{background:#374151!important}
+body.page-home .product-card h3,body.page-home .product-card__desc,body.page-home .product-card__meta strong{color:#fff!important}
+body.page-home .feature-band{background:#111827!important;border:1px solid #374151}
+body.page-home .newsletter-band{background:#374151!important;color:#fff}
+body.page-home .site-footer{background:#050505!important;border-color:#374151!important;color:#fff}
+body.page-home .hero-location{display:flex;align-items:center;gap:11px;width:max-content;max-width:100%;margin-top:22px;padding:10px 13px;border:1px solid #6b7280;border-radius:14px;background:rgba(17,24,39,.82);color:#fff;transition:.2s}
+body.page-home .hero-location:hover{border-color:#f97316;background:#1f2937;transform:translateY(-2px)}
+body.page-home .hero-location__icon{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#f97316;color:#fff;font-size:21px;line-height:1;font-weight:800}
+body.page-home .hero-location strong,body.page-home .hero-location small{display:block}
+body.page-home .hero-location strong{font-size:11px}
+body.page-home .hero-location small{margin-top:2px;color:#d1d5db;font-size:9px}
+body.page-home .hero-location__arrow{margin-left:5px;color:#f97316;font-size:18px}
+/* Shared black-grey-orange-white palette for Shop, Categories and Contact */
+body.page-shop,body.page-categories,body.page-contact,body.category-phones-accessories{background:#050505!important;color:#fff!important}
+body.page-shop main,body.page-categories main,body.page-contact main,body.category-phones-accessories main{background:#050505!important;color:#fff!important}
+body.page-shop .site-header,body.page-categories .site-header,body.page-contact .site-header,body.category-phones-accessories .site-header{background:#050505!important;border-color:#374151!important}
+body.page-shop .main-nav a,body.page-categories .main-nav a,body.page-contact .main-nav a,body.category-phones-accessories .main-nav a,body.page-shop .site-footer a,body.page-categories .site-footer a,body.page-contact .site-footer a,body.category-phones-accessories .site-footer a{color:#fff!important}
+body.page-shop .main-nav a.is-active:after,body.page-categories .main-nav a.is-active:after,body.page-contact .main-nav a.is-active:after,body.category-phones-accessories .main-nav a.is-active:after{background:#f97316!important}
+body.page-shop .page-intro,body.page-categories .page-intro,body.category-phones-accessories .page-intro{background:linear-gradient(135deg,#050505,#374151)!important;color:#fff;border-radius:0 0 28px 28px}
+body.page-shop .page-intro h1,body.page-shop .page-intro p,body.page-shop .page-intro .eyebrow,body.page-categories .page-intro h1,body.page-categories .page-intro p,body.page-categories .page-intro .eyebrow,body.category-phones-accessories .page-intro h1,body.category-phones-accessories .page-intro p,body.category-phones-accessories .page-intro .eyebrow{color:#fff!important}
+body.page-shop .page-intro h1 em,body.page-categories .page-intro h1 em,body.category-phones-accessories .page-intro h1 em{color:#f97316!important}
+body.page-shop .filter-panel,body.page-categories .filter-panel,body.category-phones-accessories .filter-panel,body.page-shop .product-card,body.page-categories .product-card,body.category-phones-accessories .product-card{background:#1f2937!important;border-color:#6b7280!important;color:#fff!important}
+body.page-shop .filter-search,body.page-categories .filter-search,body.category-phones-accessories .filter-search{background:#111827!important;border-color:#6b7280!important;color:#fff}
+body.page-shop .filter-panel label,body.page-shop .filter-group span,body.page-categories .filter-panel label,body.page-categories .filter-group span,body.category-phones-accessories .filter-panel label,body.category-phones-accessories .filter-group span,body.page-shop .shop-toolbar,body.page-categories .shop-toolbar,body.category-phones-accessories .shop-toolbar{color:#fff!important}
+body.page-shop .product-card h3,body.page-shop .product-card p,body.page-shop .product-card small,body.page-categories .product-card h3,body.page-categories .product-card p,body.page-categories .product-card small,body.category-phones-accessories .product-card h3,body.category-phones-accessories .product-card p,body.category-phones-accessories .product-card small{color:#fff!important}
+body.page-shop .product-card__visual,body.page-categories .product-card__visual,body.category-phones-accessories .product-card__visual{background:#374151!important}
+body.page-shop .button--orange,body.page-categories .button--orange,body.category-phones-accessories .button--orange,body.page-contact .button--orange{background:#f97316!important;color:#fff!important;border-color:#f97316!important}
+body.page-contact .story-hero,body.page-contact .contact-layout{background:#111827!important;color:#fff;border-color:#374151}
+body.page-contact .story-hero h1,body.page-contact .story-hero p,body.page-contact .story-hero .eyebrow,body.page-contact .contact-form h2,body.page-contact .contact-form .eyebrow,body.page-contact .contact-notes h3,body.page-contact .contact-notes p{color:#fff!important}
+body.page-contact .story-hero h1 em,body.page-contact .contact-form h2 em,body.page-contact .contact-notes span{color:#f97316!important}
+body.page-contact .contact-card,body.page-contact .contact-form input,body.page-contact .contact-form textarea{background:#374151!important;border-color:#6b7280!important;color:#fff!important}
+body.page-contact .contact-card a{color:#f97316!important}
+/* Shared footer palette: orange, black and grey */
+.site-footer{background:#050505!important;border-top:3px solid #f97316!important;color:#d1d5db!important}
+.site-footer h4{color:#f97316!important}
+.site-footer a,.site-footer p,.footer-bottom,.footer-brand{color:#d1d5db!important}
+.site-footer a:hover{color:#f97316!important}
+.site-footer .brand__image{background:#fff;border-radius:8px}
+.site-footer .footer-contact{color:#f97316!important}
+.site-footer .newsletter-input{background:#374151!important;border-color:#6b7280!important}
+.site-footer .newsletter-input input{background:transparent!important;color:#fff!important}
+.site-footer .newsletter-input button{background:#f97316!important;color:#fff!important}
+.site-footer .footer-bottom{border-color:#374151!important}
+/* Lights category palette: black, grey, orange and white */
+body.page-lights,body.category-lights{background:#050505!important;color:#fff!important}
+body.page-lights main,body.category-lights main{background:#050505!important;color:#fff!important}
+body.page-lights .site-header,body.category-lights .site-header{background:#050505!important;border-color:#374151!important}
+body.page-lights .main-nav a,body.category-lights .main-nav a{color:#fff!important}
+body.page-lights .main-nav a.is-active:after,body.category-lights .main-nav a.is-active:after{background:#f97316!important}
+body.page-lights .page-intro,body.category-lights .page-intro{background:linear-gradient(135deg,#050505,#374151)!important;color:#fff;border-radius:0 0 28px 28px}
+body.page-lights .page-intro h1,body.page-lights .page-intro p,body.page-lights .page-intro .eyebrow,body.category-lights .page-intro h1,body.category-lights .page-intro p,body.category-lights .page-intro .eyebrow{color:#fff!important}
+body.page-lights .page-intro h1 em,body.category-lights .page-intro h1 em{color:#f97316!important}
+body.page-lights .filter-panel,body.category-lights .filter-panel,body.page-lights .product-card,body.category-lights .product-card{background:#1f2937!important;border-color:#6b7280!important;color:#fff!important}
+body.page-lights .filter-search,body.category-lights .filter-search{background:#111827!important;border-color:#6b7280!important;color:#fff}
+body.page-lights .filter-panel label,body.page-lights .filter-group span,body.category-lights .filter-panel label,body.category-lights .filter-group span,body.page-lights .shop-toolbar,body.category-lights .shop-toolbar{color:#fff!important}
+body.page-lights .product-card h3,body.page-lights .product-card p,body.page-lights .product-card small,body.category-lights .product-card h3,body.category-lights .product-card p,body.category-lights .product-card small{color:#fff!important}
+body.page-lights .product-card__visual,body.category-lights .product-card__visual{background:#374151!important}
+body.page-lights .button--orange,body.category-lights .button--orange{background:#f97316!important;color:#fff!important;border-color:#f97316!important}
+/* Lights redesign: DPLIGHT image as the page background */
+body.page-lights::before,body.category-lights::before{content:"";position:fixed;inset:0;z-index:2;pointer-events:none;background-image:linear-gradient(rgba(5,5,5,.48),rgba(5,5,5,.48)),url('/static/images/lights-background.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.72}
+body.page-lights .page-intro,body.category-lights .page-intro{background:rgba(5,5,5,.86)!important;border:1px solid #f97316}
+body.page-lights .filter-panel,body.category-lights .filter-panel,body.page-lights .product-card,body.category-lights .product-card{background:rgba(17,24,39,.91)!important;border-color:#f97316!important}
+body.page-lights .shop-layout,body.category-lights .shop-layout{background:transparent!important}
+body.page-lights .product-card__visual,body.category-lights .product-card__visual{background:#374151!important}
+/* Lights landing design */
+body.page-lights .page-intro--lights,body.category-lights .page-intro--lights{min-height:360px;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:58px 60px;background:linear-gradient(110deg,rgba(5,5,5,.95),rgba(17,24,39,.78)),url('/static/images/lights-background.jpg') center/cover!important;border:1px solid #f97316;box-shadow:0 18px 50px rgba(0,0,0,.32)}
+body.page-lights .page-intro--lights h1,body.category-lights .page-intro--lights h1{font-size:clamp(48px,7vw,86px);max-width:720px;letter-spacing:-.07em}
+body.page-lights .page-intro--lights h1 em,body.category-lights .page-intro--lights h1 em{color:#f97316!important}
+body.page-lights .page-intro--lights p,body.category-lights .page-intro--lights p{max-width:530px;font-size:17px;color:#fff!important}
+body.page-lights .page-intro--lights .button,body.category-lights .page-intro--lights .button{margin-top:20px}
+body.page-lights .page-intro--lights .page-intro__meta,body.category-lights .page-intro--lights .page-intro__meta{background:#f97316;color:#fff;border-radius:50%;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+body.page-lights .page-intro--lights .page-intro__meta strong,body.category-lights .page-intro--lights .page-intro__meta strong{font-size:38px;color:#fff!important}
+body.page-lights .page-intro--lights .page-intro__meta span,body.category-lights .page-intro--lights .page-intro__meta span{color:#fff!important;text-align:center}
+body.page-lights #lights-products,body.category-lights #lights-products{padding-top:46px}
+@media(max-width:780px){body.page-lights .page-intro--lights,body.category-lights .page-intro--lights{display:block;padding:40px 24px;min-height:0}body.page-lights .page-intro--lights .page-intro__meta,body.category-lights .page-intro--lights .page-intro__meta{margin-top:24px}}
+/* Lights & Deals brand outline section */
+.lights-deals{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:48px 0 20px;color:#fff}
+.lights-deals h2{margin-top:8px;color:#fff;font-size:clamp(28px,4vw,46px);max-width:500px}
+.lights-deals h2 em{color:#f97316}
+.lights-deals__outline{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;max-width:590px}
+.lights-deals__outline span{border:1px solid #f97316;border-radius:999px;padding:11px 16px;color:#fff;background:rgba(5,5,5,.68);font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.lights-deals__outline span:hover{background:#f97316;color:#fff}
+@media(max-width:780px){.lights-deals{display:block;padding-top:35px}.lights-deals__outline{justify-content:flex-start;margin-top:22px}.lights-deals__outline span{padding:9px 12px}}
+.lights-deals__outline a{border:1px solid #f97316;border-radius:999px;padding:14px 22px;color:#fff;background:rgba(5,5,5,.68);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.lights-deals__outline a:hover{background:#f97316;color:#fff}
+body.category-bulbs{background:#050505!important;color:#fff!important}
+body.category-bulbs main{background:#050505!important;color:#fff!important}
+body.category-bulbs .site-header{background:#050505!important;border-color:#374151!important}
+body.category-bulbs .page-intro{background:linear-gradient(110deg,rgba(5,5,5,.95),rgba(17,24,39,.78)),url('/static/images/lights-background.jpg') center/cover!important;border:1px solid #f97316;color:#fff}
+body.category-bulbs .page-intro h1,body.category-bulbs .page-intro p,body.category-bulbs .page-intro .eyebrow,body.category-bulbs .page-intro__meta strong,body.category-bulbs .page-intro__meta span{color:#fff!important}
+body.category-bulbs .page-intro h1 em{color:#f97316!important}
+body.category-bulbs .filter-panel,body.category-bulbs .product-card{background:#1f2937!important;border-color:#f97316!important;color:#fff!important}
+body.category-bulbs .product-card h3,body.category-bulbs .product-card p,body.category-bulbs .product-card small{color:#fff!important}
+body.category-bulbs .product-card__visual{background:#374151!important}
+/* Full-width end-to-end navbar */
+.site-header{width:100%!important;max-width:none!important;margin:0!important;padding-left:clamp(16px,3vw,42px)!important;padding-right:clamp(16px,3vw,42px)!important}
+/* Clean account/login icon */
+.icon-button svg{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-button:hover svg{transform:scale(1.06)}
+/* Orange navbar search */
+.header-search{background:#f97316!important;border-color:#f97316!important;color:#fff!important}
+.header-search span{color:#fff!important}
+.header-search input{color:#fff!important}
+.header-search input::placeholder{color:rgba(255,255,255,.86)!important}
+.header-search:focus-within{background:#ea580c!important;border-color:#ea580c!important;box-shadow:0 0 0 3px rgba(249,115,22,.24)!important}
+/* Search: orange surface without white elements */
+.header-search span{color:#111827!important}
+.header-search input{color:#111827!important}
+.header-search input::placeholder{color:rgba(17,24,39,.72)!important}
+.header-search:focus-within{background:#ea580c!important;border-color:#c2410c!important;box-shadow:0 0 0 3px rgba(249,115,22,.28)!important}
+
+/* Balanced navbar: logo left, navigation centered, actions right */
+@media(min-width:781px){
+  .site-header{display:grid!important;grid-template-columns:minmax(190px,1fr) auto minmax(190px,1fr);column-gap:24px;align-items:center}
+  .site-header>.brand{justify-self:start}
+  .site-header>.main-nav{justify-content:center;gap:clamp(12px,1.45vw,22px);min-width:0}
+  .site-header>.header-actions{justify-self:end}
+}
+@media(min-width:781px) and (max-width:1100px){
+  .site-header{column-gap:14px}
+  .brand__image{width:185px!important}
+  .brand{min-width:185px}
+  .main-nav{gap:10px!important}
+  .main-nav a{font-size:10px}
+  .header-search{width:125px}
+}
+
+/* Mobile navbar visibility and contrast */
+@media(max-width:780px){
+  .brand__image{width:142px!important;max-height:38px}
+  .brand{min-width:0!important}
+  body.page-home .hero-location{width:100%;margin-top:18px}
+  .mobile-menu-button{display:block!important;position:relative;z-index:60;padding:8px!important}
+  .mobile-menu-button span{display:block!important;width:24px;height:3px;margin:4px 0;background:#f97316!important;border-radius:4px}
+  .main-nav{top:70px!important;z-index:55;background:#111827!important;border:1px solid #f97316!important;box-shadow:0 16px 32px rgba(0,0,0,.35)!important}
+  .main-nav.is-open{display:flex!important}
+  .main-nav a{color:#fff!important;background:transparent!important;padding:13px 15px!important}
+  .main-nav a:hover,.main-nav a.is-active{color:#f97316!important;background:#1f2937!important}
+  .main-nav a.is-active:after{background:#f97316!important}
+}

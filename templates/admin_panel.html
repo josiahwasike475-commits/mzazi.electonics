@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }} · Mzazi Electronics</title>
+    <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fresh-redesign.css' %}">
+</head>
+<body class="admin-shell">
+    <aside class="admin-sidebar">
+        <a class="admin-brand" href="{% url 'core:home' %}">
+            <img src="{% static 'images/logo.svg' %}" alt="Mzazi Electronics">
+        </a>
+        <div class="admin-profile">
+            <span class="admin-avatar">{{ request.user.username|first|upper }}</span>
+            <div><strong>{{ request.user.get_full_name|default:request.user.username }}</strong><small>Store administrator</small></div>
+        </div>
+        <nav class="admin-nav" aria-label="Management navigation">
+            <span class="admin-nav__label">Workspace</span>
+            <a class="is-active" href="{% url 'dashboard:admin_panel' %}"><span>▦</span> Overview</a>
+            <a href="{% url 'admin:orders_order_changelist' %}"><span>↗</span> Orders <b>{{ metrics.orders }}</b></a>
+            <a href="{% url 'admin:catalog_product_changelist' %}"><span>◈</span> Products <b>{{ metrics.products }}</b></a>
+            <a href="{% url 'admin:catalog_category_changelist' %}"><span>⌘</span> Categories</a>
+            <span class="admin-nav__label admin-nav__label--spaced">Shortcuts</span>
+            <a href="{% url 'admin:orders_paymentattempt_changelist' %}"><span>₿</span> Payments</a>
+            <a href="{% url 'admin:auth_user_changelist' %}"><span>♙</span> Customers</a>
+        </nav>
+        <div class="admin-sidebar__bottom">
+            <a href="{% url 'core:home' %}">← View storefront</a>
+            <a href="{% url 'admin:index' %}">Open Django Admin ↗</a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-topbar">
+            <div><span class="admin-kicker">MZAZI / CONTROL ROOM</span><h1>Good day, {{ request.user.username }}.</h1><p>Here is what is happening across your shop today.</p><a class="admin-location" href="{% url 'core:contact' %}"><span class="admin-location__icon">⌖</span><span><strong>Store location</strong><small>Mukuru kwa Ruben · Embakasi South, Nairobi</small></span></a></div>
+            <div class="admin-topbar__actions"><a class="admin-button admin-button--quiet" href="{% url 'core:home' %}">View shop</a><a class="admin-button admin-button--orange" href="{% url 'admin:catalog_product_add' %}">+ Add product</a></div>
+        </header>
+
+        <section class="admin-stats" aria-label="Store metrics">
+            <article class="admin-stat admin-stat--sales"><span>Total sales</span><strong>KSh {{ metrics.sales|floatformat:0 }}</strong><small>Successful payments</small><i>↗</i></article>
+            <article class="admin-stat"><span>All orders</span><strong>{{ metrics.orders }}</strong><small>Orders received</small><i>▤</i></article>
+            <article class="admin-stat"><span>Needs action</span><strong>{{ metrics.pending }}</strong><small>Pending orders</small><i>!</i></article>
+            <article class="admin-stat"><span>Low stock</span><strong>{{ metrics.low_stock }}</strong><small>Three or fewer left</small><i>◌</i></article>
+        </section>
+
+        <section class="admin-content-grid">
+            <article class="admin-card admin-card--orders">
+                <div class="admin-card__head"><div><span class="admin-kicker">Live queue</span><h2>Recent orders</h2></div><a href="{% url 'admin:orders_order_changelist' %}">View all ↗</a></div>
+                <div class="admin-table admin-table--orders"><div class="admin-table__row admin-table__row--head"><span>Order</span><span>Customer</span><span>Status</span><span>Total</span></div>{% for order in recent_orders %}<div class="admin-table__row"><strong>{{ order.order_number }}</strong><span>{{ order.customer_name }}<small>{{ order.created_at|date:'d M, H:i' }}</small></span><span class="admin-status admin-status--{{ order.status }}">{{ order.get_status_display }}</span><strong>{% if order.total %}KSh {{ order.total|floatformat:0 }}{% else %}On request{% endif %}</strong></div>{% empty %}<div class="admin-empty">No orders yet. New customer orders will appear here.</div>{% endfor %}</div>
+            </article>
+            <article class="admin-card admin-card--attention"><div class="admin-card__head"><div><span class="admin-kicker">Inventory watch</span><h2>Stock alerts</h2></div><span class="admin-count">{{ metrics.low_stock }}</span></div>{% for product in low_stock_products %}<a class="admin-inventory-row" href="{% url 'admin:catalog_product_change' product.id %}"><span class="admin-product-mark">{{ product.name|first|upper }}</span><span><strong>{{ product.name }}</strong><small>{{ product.category.name }}</small></span><b>{{ product.stock_quantity }} left</b></a>{% empty %}<div class="admin-empty admin-empty--compact">Your active products are comfortably stocked.</div>{% endfor %}<a class="admin-card__footer-link" href="{% url 'admin:catalog_product_changelist' %}">Manage inventory ↗</a></article>
+        </section>
+
+        <section class="admin-quick-actions"><div><span class="admin-kicker">Quick actions</span><h2>Keep things moving.</h2></div><div class="admin-action-list"><a href="{% url 'admin:catalog_product_add' %}"><span>＋</span><strong>Add a product</strong><small>List a new item</small></a><a href="{% url 'admin:catalog_category_add' %}"><span>⌘</span><strong>Create category</strong><small>Organise your shop</small></a><a href="{% url 'admin:orders_order_changelist' %}"><span>✓</span><strong>Review orders</strong><small>Process the queue</small></a></div></section>
+        <footer class="admin-footer"><span>Mzazi Electronics · Smart Electronics. Better Life.</span><span>Kenya · KSh</span></footer>
+    </main>
+</body>
+</html>

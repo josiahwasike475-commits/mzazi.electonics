@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="page-intro page-intro--compact wrap"><div><span class="eyebrow">Your basket</span><h1>Ready when <em>you are.</em></h1><p>Review your items, then choose the easiest way to order.</p></div></section>
+<section class="cart-layout wrap"><div class="cart-items" data-cart-items></div><aside class="summary-card" data-cart-summary><div class="eyebrow">Order summary</div><div class="summary-row"><span>Subtotal</span><strong data-cart-subtotal>KSh 0</strong></div><div class="summary-row"><span>Delivery</span><strong>Confirmed on order</strong></div><div class="summary-total"><span>Estimated total</span><strong data-cart-total>Price on request</strong></div><a class="button button--orange button--full" href="{% url 'orders:checkout' %}">Proceed to checkout <span>↗</span></a><a class="text-link text-link--center" href="{% url 'catalog:shop' %}">← Continue shopping</a></aside></section>
+{% endblock %}
