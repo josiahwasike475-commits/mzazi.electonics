@@ -9,8 +9,19 @@ load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "mzazi-local-development-key-change-me")
 DEBUG = os.getenv("DJANGO_DEBUG", "false").lower() == "true"
-ALLOWED_HOSTS = [host.strip() for host in os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if host.strip()]
+# settings.py
 
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+# Render inatoa anwani yako kiotomatiki kupitia variable hii
+render_external_hostname = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if render_external_hostname:
+    ALLOWED_HOSTS.append(render_external_hostname)
+
+# Hii inakuruhusu kuongeza anwani zingine kwenye Render Environment Variables
+allowed_hosts_env = os.getenv("DJANGO_ALLOWED_HOSTS", "")
+if allowed_hosts_env:
+    ALLOWED_HOSTS.extend([host.strip() for host in allowed_hosts_env.split(",") if host.strip()])
 # CSRF_TRUSTED_ORIGINS - inahitajika Django 4+ kwa POST kupitia HTTPS
 CSRF_TRUSTED_ORIGINS = [
     f"{'http' if host in ('localhost', '127.0.0.1') else 'https'}://{host}"
